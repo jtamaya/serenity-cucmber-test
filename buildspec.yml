@@ -1,13 +1,10 @@
 version: 0.2
 phases:
-  pre_build:
-    commands:
-      - docker login -u $dockerhub_username -p $dockerhub_password
-      - docker run -d -p 4444:4444 --shm-size="2g" markhobson/maven-chrome:latest
-      - docker ps
   build:
     commands:
-      - mvn verify -e
+      - docker login -u $dockerhub_username -p $dockerhub_password
+      - docker run -d -p 4444:4444 --shm-size="2g" markhobson/maven-chrome:latest mvn verify -e
+
 artifacts:
   files:
     - ./**/*

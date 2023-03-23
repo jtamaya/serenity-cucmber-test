@@ -2,7 +2,7 @@ version: 0.2
 phases:
   build:
     commands:
-      - mvn verify
+      - mvn verify -e
 artifacts:
   files:
     - ./**/*

@@ -7,7 +7,7 @@ phases:
       - docker build -t test-cont .
       - docker run -dp 4444:4444 test-cont
       - docker ps
-
+      - mvn clean verify
 artifacts:
   files:
     - ./**/*

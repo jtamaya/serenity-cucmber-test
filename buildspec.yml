@@ -4,7 +4,7 @@ phases:
     commands:
       - docker login -u $dockerhub_username -p $dockerhub_password
       - ls
-      - docker run --rm -w / markhobson/maven-chrome:latest mvn clean verify -e
+      - docker run --rm -w /src markhobson/maven-chrome:latest mvn clean verify --file *.pom
 
 artifacts:
   files:

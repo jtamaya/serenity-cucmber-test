@@ -3,7 +3,7 @@ phases:
   build:
     commands:
       - docker login -u $dockerhub_username -p $dockerhub_password
-      - docker run -d -p 4444:4444 --shm-size="2g" markhobson/maven-chrome:latest mvn verify -e
+      - docker run --rm  markhobson/maven-chrome:latest mvn clean verify -e
 
 artifacts:
   files:

@@ -4,7 +4,8 @@ phases:
     commands:
       - docker login -u $dockerhub_username -p $dockerhub_password
       - ls
-      - docker run --rm -w / markhobson/maven-chrome:latest
+      - docker build -t test-cont .
+      - docker run -dp 4444:4444 test-cont
       - docker ps
 
 artifacts:

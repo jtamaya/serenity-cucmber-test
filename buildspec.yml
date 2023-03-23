@@ -7,7 +7,7 @@ phases:
       - docker ps
   build:
     commands:
-      - mvn verify -e -X
+      - mvn verify -e
 artifacts:
   files:
     - ./**/*

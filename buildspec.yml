@@ -1,12 +1,23 @@
 version: 0.2
-phases:
-  build:
+  install:
+    commands:
+      - sudo apt-get update
+      - sudo apt-get -y upgrade
+      - sudo apt-get install wget
+      - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+      - sudo sh -c 'echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+      - sudo apt-get update
+      - sudo apt-get install -f
+      - sudo apt-get -y install google-chrome-stable
+      - sudo apt-get install -f
+      - sudo google-chrome --version --headless --no-sandbox --disable-setuid-sandbox
+  pre_build:
     commands:
       - docker login -u $dockerhub_username -p $dockerhub_password
-      - ls
-      - docker build -t test-cont .
-      - docker run -dp 4444:4444 test-cont
+      - docker run -d -p 4444:4444 --shm-size="2g" -e SE_NODE_GRID_URL="http://localhost:4444/wd/hub" selenium/standalone-chrome:4.8.1-20230306
       - docker ps
+  build:
+    commands:
       - mvn clean verify
 artifacts:
   files:

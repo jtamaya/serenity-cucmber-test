@@ -3,7 +3,7 @@ phases:
   pre_build:
     commands:
       - docker login -u $dockerhub_username -p $dockerhub_password
-      - docker run -d -p 4444:4444 --shm-size="2g" -e SE_NODE_GRID_URL="http://localhost:4444/wd/hub" selenium/standalone-chrome:4.8.1-20230306
+      - docker run -d -p 4444:4444 --shm-size="2g" -e SE_NODE_GRID_URL="http://localhost:4444/wd/hub" selenium/standalone-edge:4.8.1-20230306
       - docker ps
   build:
     commands:

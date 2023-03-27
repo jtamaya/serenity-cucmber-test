@@ -7,7 +7,7 @@ phases:
       - docker ps
   build:
     commands:
-      - mvn clean verify
+      - mvn clean verify -Ddriver=edge
 artifacts:
   files:
     - ./**/*

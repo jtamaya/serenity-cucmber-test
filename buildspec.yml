@@ -10,8 +10,8 @@ phases:
       - docker ps
   build:
     commands:
-      - mvn clean verify
-      - mvn clean verify -Dwebdriver.remote.driver=edge
+      - mvn clean verify -Denvironment=dev
+      - mvn clean verify -Dwebdriver.remote.driver=edge -Denvironment=dev
 artifacts:
   files:
     - ./**/*

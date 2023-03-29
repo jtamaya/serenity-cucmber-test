@@ -1,3 +1,5 @@
+[![CucumberReports: Test-Serenity](https://messages.cucumber.io/api/report-collections/91c8d38f-f3c8-45f5-bad6-4632826e63a5/badge)](https://reports.cucumber.io/report-collections/91c8d38f-f3c8-45f5-bad6-4632826e63a5)
+
 # Getting started with Serenity and Cucumber
 
 Serenity BDD is a library that makes it easier to write high quality automated acceptance tests, with powerful reporting and living documentation features. It has strong support for both web testing with Selenium, and API testing using RestAssured.

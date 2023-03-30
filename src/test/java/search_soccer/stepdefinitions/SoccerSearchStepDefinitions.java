@@ -8,8 +8,6 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import search_soccer.search.LookForSoccerHeader;
 import search_soccer.search.SoccerArticle;
-import starter.search.LookForInformation;
-import starter.search.WikipediaArticle;
 
 public class SoccerSearchStepDefinitions {
     @Given("{actor} is researching soccer on the internet")

@@ -9,7 +9,7 @@ import net.serenitybdd.screenplay.ensure.Ensure;
 import search_soccer.search.LookForSoccerHeader;
 import search_soccer.search.SoccerArticle;
 
-public class SoccerSearchStepDefinitions {
+public class SearchStepDefinitions {
     @Given("{actor} is researching soccer on the internet")
     public void researchingThings(Actor actor) {
         actor.wasAbleTo(NavigateTo.theWikipediaHomePage());

@@ -12,6 +12,9 @@ phases:
     commands:
       - mvn clean verify -Denvironment=dev
       - mvn clean verify -Dwebdriver.remote.driver=edge -Denvironment=dev
+  post_build:
+    commands:
+      - aws s3 cp --recursive ./target/site/serenity/ s3://serenity-report-swo-demo-quietrack
 artifacts:
   files:
     - ./**/*
